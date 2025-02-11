@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/data.js", "vite-env.d.ts", "types.d.ts"]
+}
