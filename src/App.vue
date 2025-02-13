@@ -1,29 +1,38 @@
 <template>
-	<main class="p-[2rem]">
-		<section class="relative grid grid-cols-[1fr] grid-rows-[.868fr_auto_auto]">
-			<img :src="pattern" alt="" class="absolute top-[1%] left-1/2 translate-x-[-50%] scale-95" />
+	<main class="p-[2rem] xl:flex container xl:w-[75%] xl:items-center xl:relative">
+		<section class="relative grid grid-cols-[1fr] grid-rows-[1fr_auto_auto] xl:order-1 xl:w-[183.2rem] xl:self-start">
+			<img :src="pattern" alt="" class="absolute top-[1%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1.4]" />
 			<Transition>
 				<img
 					v-if="index !== null"
 					:key="index"
 					:src="data[index].img"
 					:alt="data[index].alt + ' profile picture'"
-					class="avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto" />
+					class="avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10" />
 			</Transition>
 			<div
-				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-10 gap-x-[3rem] w-fit p-[1rem] rounded-full">
-				<button><img :src="left" alt="previous" class="scale-[.8] cursor-pointer" /></button>
-				<button><img :src="right" alt="next" class="scale-[.8] cursor-pointer" @clBick="goNext" /></button>
+				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-10 gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]">
+				<button>
+					<img :src="left" alt="previous" class="scale-[.8] xl:scale-[1] cursor-pointer" @click="goPrevious" />
+				</button>
+				<button><img :src="right" alt="next" class="scale-[.8] xl:scale-[1] cursor-pointer" @click="goNext" /></button>
 			</div>
 		</section>
-		<section class="p-[2rem] text-center mt-[2rem] pt-[4.5rem] relative">
-			<img :src="quotes" alt="" class="absolute left-1/2 top-0 scale-[.5] translate-x-[-50%]" />
-			<p class="font-inter300 text-[1.7rem] relativeW">{{ data[index].desc }}</p>
-			<p class="font-inter700 mt-[1.5rem] text-[1.4rem]">{{ data[index].name }}</p>
-			<p class="text-[1.4rem] text-blue-0">{{ data[index].job }}</p>
+		<section class="p-[2rem] text-center mt-[2rem] pt-[4.5rem] relative xl:w-[200rem] xl:text-left z-20">
+			<div class="xl:absolute xl:top-1/2 xl:translate-y-[-45%] xl:left-[10%] xl:w-[49.5rem]">
+				<img
+					:src="quotes"
+					alt=""
+					class="absolute left-1/2 top-0 scale-[.5] translate-x-[-50%] xl:scale-[.7] xl:left-[26%]" />
+				<p class="font-inter300 text-[1.7rem] relative xl:text-[2.6rem]">{{ data[index].desc }}</p>
+				<div class="xl:flex xl:gap-x-[1rem] xl:items-center xl:mt-[2rem]">
+					<p class="font-inter700 mt-[1.5rem] text-[1.4rem] xl:mt-0 xl:text-[1.6rem]">{{ data[index].name }}</p>
+					<p class="text-[1.4rem] text-blue-0 xl:text-[1.6rem]">{{ data[index].job }}</p>
+				</div>
+			</div>
 		</section>
-		<img :src="downPattern" alt="" class="absolute w-full left-0" />
 	</main>
+	<img :src="downPattern" alt="" class="absolute w-full left-0 bottom-0 xl:w-[43%]" />
 </template>
 
 <script setup lang="ts">
@@ -74,6 +83,14 @@ const goNext = (): void => {
 		index.value = 0
 	} else {
 		index.value++
+	}
+}
+
+const goPrevious = (): void => {
+	if (index.value === 0) {
+		index.value = Object.keys(data).length - 1
+	} else {
+		index.value--
 	}
 }
 </script>
