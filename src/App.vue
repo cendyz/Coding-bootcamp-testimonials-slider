@@ -9,7 +9,7 @@
 				:alt="item.img + ' profile picture'"
 				:class="[
 					'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]',
-					index === indexItem ? 'z-[10]' : 'z-0',
+					index === indexItem ? 'z-[10] block' : 'hidden',
 				]" />
 
 			<div

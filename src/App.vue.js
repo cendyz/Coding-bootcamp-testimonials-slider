@@ -81,7 +81,7 @@ function __VLS_template() {
         var _b = _a[_i], item = _b[0], index = _b[1];
         __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ key: ((index)), src: ((item.img)), alt: ((item.img + ' profile picture')) }, { class: (([
                 'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]',
-                index === __VLS_ctx.indexItem ? 'z-[10]' : 'z-0'
+                index === __VLS_ctx.indexItem ? 'z-[10] block' : 'hidden',
             ])) }));
     }
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-[30] gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]") }));
