@@ -94,6 +94,7 @@ const goPrevious = (): void => {
 	}
 }
 
+
 const preloadImages = () => {
 	Object.values(data).forEach((item) => {
 		const img = new Image()
