@@ -1,16 +1,18 @@
 <template>
 	<main class="p-[2rem] xl:flex container xl:w-[75%] xl:items-center xl:relative">
 		<section class="relative grid grid-cols-[1fr] grid-rows-[1fr_auto_auto] xl:order-1 xl:w-[183.2rem] xl:self-start">
-			<img :src="pattern" alt="" class="absolute top-[1%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1.4]" />
-			<img
-				v-for="(item, index) in data"
-				:key="index"
-				:src="item.img"
-				:alt="item.img + ' profile picture'"
-				class="'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]" v-show="index === indexItem"/>
+			<img :src="pattern" alt="" class="absolute top-[-9%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1]" />
+			<div class="relative w-[50rem] mx-auto">
+				<div class="w-[20rem] h-[20rem] xl:w-[40rem] xl:h-[40rem] col-[1/2] row-[1/3]">
+					<img v-for="(item, index) in data" :key="index" :src="item.img" :alt="item.img + ' profile picture'"
+					class="avatar w-[20rem] h-[20rem] xl:w-[40rem] xl:h-[40rem] top-0 left-[10%] rounded-3xl absolute inset-0 transition-opacity
+					duration-500 ease-in-out" :class="{ 'opacity-100 z-[10]': index === indexItem, 'opacity-0 z-0': index !==
+					indexItem }"
+				</div>
+			</div>
 
 			<div
-				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-[30] gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]">
+				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-[30] gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[19%] xl:mt-[-2.3rem] xl:p-[1.3rem]">
 				<button>
 					<img :src="left" alt="previous" class="scale-[.8] xl:scale-[1] cursor-pointer" @click="goPrevious" />
 				</button>
