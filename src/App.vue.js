@@ -10,15 +10,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var pattern_bg_svg_1 = require("@/images/pattern-bg.svg");
 var image_tanya_jpg_1 = require("@/images/image-tanya.jpg");
@@ -76,16 +67,7 @@ var goPrevious = function () {
     else {
         index.value--;
     }
-};
-var preloadImages = function () {
-    Object.values(data).forEach(function (item) {
-        var img = new Image();
-        img.src = item.img;
-    });
-};
-(0, vue_1.onMounted)(function () {
-    preloadImages();
-}); /* PartiallyEnd: #3632/scriptSetup.vue */
+}; /* PartiallyEnd: #3632/scriptSetup.vue */
 function __VLS_template() {
     var __VLS_ctx = {};
     var __VLS_components;
@@ -95,16 +77,7 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.main, __VLS_intrinsicElements.main)(__assign({ class: ("p-[2rem] xl:flex container xl:w-[75%] xl:items-center xl:relative") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)(__assign({ class: ("relative grid grid-cols-[1fr] grid-rows-[1fr_auto_auto] xl:order-1 xl:w-[183.2rem] xl:self-start") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.pattern)), alt: ("") }, { class: ("absolute top-[1%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1.4]") }));
-    var __VLS_0 = {}.Transition;
-    /** @type { [typeof __VLS_components.Transition, typeof __VLS_components.Transition, ] } */ ;
-    // @ts-ignore
-    var __VLS_1 = __VLS_asFunctionalComponent(__VLS_0, new __VLS_0({}));
-    var __VLS_2 = __VLS_1.apply(void 0, __spreadArray([{}], __VLS_functionalComponentArgsRest(__VLS_1), false));
-    if (__VLS_ctx.index !== null) {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ key: ((__VLS_ctx.index)), src: ((__VLS_ctx.data[__VLS_ctx.index].img)), alt: ((__VLS_ctx.data[__VLS_ctx.index].alt + ' profile picture')) }, { class: ("avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10") }));
-    }
-    __VLS_5.slots.default;
-    var __VLS_5;
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.data[__VLS_ctx.index].img)), alt: ((__VLS_ctx.data[__VLS_ctx.index].alt + ' profile picture')) }, { class: ("avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-10 gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.goPrevious) }, { src: ((__VLS_ctx.left)), alt: ("previous") }), { class: ("scale-[.8] xl:scale-[1] cursor-pointer") }));

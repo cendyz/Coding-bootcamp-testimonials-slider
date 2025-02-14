@@ -2,14 +2,12 @@
 	<main class="p-[2rem] xl:flex container xl:w-[75%] xl:items-center xl:relative">
 		<section class="relative grid grid-cols-[1fr] grid-rows-[1fr_auto_auto] xl:order-1 xl:w-[183.2rem] xl:self-start">
 			<img :src="pattern" alt="" class="absolute top-[1%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1.4]" />
-			<Transition>
-				<img
-					v-if="index !== null"
-					:key="index"
-					:src="data[index].img"
-					:alt="data[index].alt + ' profile picture'"
-					class="avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10" />
-			</Transition>
+
+			<img
+				:src="data[index].img"
+				:alt="data[index].alt + ' profile picture'"
+				class="avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10" />
+
 			<div
 				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-10 gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]">
 				<button>
@@ -45,7 +43,7 @@ import downPattern from '@/images/pattern-curve.svg'
 import quotes from '@/images/pattern-quotes.svg'
 import jerry from '@/images/jerry.jpg'
 import tom from '@/images/tom.jpg'
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref} from 'vue'
 let index = ref(0)
 const data = reactive({
 	0: {
@@ -93,18 +91,6 @@ const goPrevious = (): void => {
 		index.value--
 	}
 }
-
-
-const preloadImages = () => {
-	Object.values(data).forEach((item) => {
-		const img = new Image()
-		img.src = item.img
-	})
-}
-
-onMounted(() => {
-	preloadImages()
-})
 </script>
 
 <style lang="scss">
