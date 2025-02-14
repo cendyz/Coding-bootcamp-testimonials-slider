@@ -21,51 +21,51 @@ var pattern_quotes_svg_1 = require("@/images/pattern-quotes.svg");
 var jerry_jpg_1 = require("@/images/jerry.jpg");
 var tom_jpg_1 = require("@/images/tom.jpg");
 var vue_1 = require("vue");
-var index = (0, vue_1.ref)(0);
-var data = (0, vue_1.reactive)({
-    0: {
+var indexItem = (0, vue_1.ref)(0);
+var data = (0, vue_1.reactive)([
+    {
         name: 'Tanya Sinclair',
         job: 'UX Engineer',
         img: image_tanya_jpg_1.default,
         alt: 'Tanya',
         desc: '“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”',
     },
-    1: {
+    {
         name: 'John Tarkpor',
         job: 'Junior Front-end Developer',
         img: image_john_jpg_1.default,
         alt: 'John',
         desc: '“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”',
     },
-    2: {
+    {
         name: 'Tom Cat',
         job: 'CSS Overlord & Animation Expert',
         img: tom_jpg_1.default,
         alt: 'Tom',
         desc: '“ Every time I think I fixed a CSS issue, Jerry finds a new screen size to break it. ”',
     },
-    3: {
+    {
         name: 'Jerry Mouse',
         job: 'Full Cheese Stack Developer',
         img: jerry_jpg_1.default,
         alt: 'Jerry',
         desc: '“ I optimize my code like I optimize my cheese supply: never waste a single byte! ”',
     },
-});
+]);
 var goNext = function () {
-    if (Object.keys(data).length - 1 === index.value) {
-        index.value = 0;
+    if (Object.keys(data).length - 1 === indexItem.value) {
+        indexItem.value = 0;
     }
     else {
-        index.value++;
+        indexItem.value++;
     }
 };
 var goPrevious = function () {
-    if (index.value === 0) {
-        index.value = Object.keys(data).length - 1;
+    if (indexItem.value === 0) {
+        indexItem.value = Object.keys(data).length - 1;
     }
     else {
-        index.value--;
+        indexItem.value--;
     }
 }; /* PartiallyEnd: #3632/scriptSetup.vue */
 function __VLS_template() {
@@ -77,8 +77,14 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.main, __VLS_intrinsicElements.main)(__assign({ class: ("p-[2rem] xl:flex container xl:w-[75%] xl:items-center xl:relative") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)(__assign({ class: ("relative grid grid-cols-[1fr] grid-rows-[1fr_auto_auto] xl:order-1 xl:w-[183.2rem] xl:self-start") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.pattern)), alt: ("") }, { class: ("absolute top-[1%] left-1/2 translate-x-[-50%] scale-95 xl:scale-[1.4]") }));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.data[__VLS_ctx.index].img)), alt: ((__VLS_ctx.data[__VLS_ctx.index].alt + ' profile picture')) }, { class: ("avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1] z-10") }));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-10 gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]") }));
+    for (var _i = 0, _a = __VLS_getVForSourceType((__VLS_ctx.data)); _i < _a.length; _i++) {
+        var _b = _a[_i], item = _b[0], index = _b[1];
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ key: ((index)), src: ((item.img)), alt: ((item.img + ' profile picture')) }, { class: (([
+                'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]',
+                index === __VLS_ctx.indexItem ? 'z-[10]' : 'z-0'
+            ])) }));
+    }
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-[30] gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.goPrevious) }, { src: ((__VLS_ctx.left)), alt: ("previous") }), { class: ("scale-[.8] xl:scale-[1] cursor-pointer") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({});
@@ -87,14 +93,14 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("xl:absolute xl:top-1/2 xl:translate-y-[-45%] xl:left-[10%] xl:w-[49.5rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.quotes)), alt: ("") }, { class: ("absolute left-1/2 top-0 scale-[.5] translate-x-[-50%] xl:scale-[.7] xl:left-[26%]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("font-inter300 text-[1.7rem] relative xl:text-[2.6rem]") }));
-    (__VLS_ctx.data[__VLS_ctx.index].desc);
+    (__VLS_ctx.data[__VLS_ctx.indexItem].desc);
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("xl:flex xl:gap-x-[1rem] xl:items-center xl:mt-[2rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("font-inter700 mt-[1.5rem] text-[1.4rem] xl:mt-0 xl:text-[1.6rem]") }));
-    (__VLS_ctx.data[__VLS_ctx.index].name);
+    (__VLS_ctx.data[__VLS_ctx.indexItem].name);
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("text-[1.4rem] text-blue-0 xl:text-[1.6rem]") }));
-    (__VLS_ctx.data[__VLS_ctx.index].job);
+    (__VLS_ctx.data[__VLS_ctx.indexItem].job);
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.downPattern)), alt: ("") }, { class: ("absolute w-full left-0 bottom-0 xl:w-[43%]") }));
-    ['p-[2rem]', 'xl:flex', 'container', 'xl:w-[75%]', 'xl:items-center', 'xl:relative', 'relative', 'grid', 'grid-cols-[1fr]', 'grid-rows-[1fr_auto_auto]', 'xl:order-1', 'xl:w-[183.2rem]', 'xl:self-start', 'absolute', 'top-[1%]', 'left-1/2', 'translate-x-[-50%]', 'scale-95', 'xl:scale-[1.4]', 'avatar', 'scale-[.75]', 'rounded-3xl', 'col-[1/2]', 'row-[1/3]', 'mx-auto', 'w-[50rem]', 'xl:scale-[1.1]', 'z-10', 'grid-cols-1', 'grid-col-[1/2]', 'col-[1/2]', 'row-[2/4]', 'bg-white', 'mx-auto', 'flex', 'z-10', 'gap-x-[3rem]', 'w-fit', 'p-[1rem]', 'rounded-full', 'xl:absolute', 'xl:left-[11%]', 'xl:p-[1.3rem]', 'scale-[.8]', 'xl:scale-[1]', 'cursor-pointer', 'scale-[.8]', 'xl:scale-[1]', 'cursor-pointer', 'p-[2rem]', 'text-center', 'mt-[2rem]', 'pt-[4.5rem]', 'relative', 'xl:w-[200rem]', 'xl:text-left', 'z-20', 'xl:absolute', 'xl:top-1/2', 'xl:translate-y-[-45%]', 'xl:left-[10%]', 'xl:w-[49.5rem]', 'absolute', 'left-1/2', 'top-0', 'scale-[.5]', 'translate-x-[-50%]', 'xl:scale-[.7]', 'xl:left-[26%]', 'font-inter300', 'text-[1.7rem]', 'relative', 'xl:text-[2.6rem]', 'xl:flex', 'xl:gap-x-[1rem]', 'xl:items-center', 'xl:mt-[2rem]', 'font-inter700', 'mt-[1.5rem]', 'text-[1.4rem]', 'xl:mt-0', 'xl:text-[1.6rem]', 'text-[1.4rem]', 'text-blue-0', 'xl:text-[1.6rem]', 'absolute', 'w-full', 'left-0', 'bottom-0', 'xl:w-[43%]',];
+    ['p-[2rem]', 'xl:flex', 'container', 'xl:w-[75%]', 'xl:items-center', 'xl:relative', 'relative', 'grid', 'grid-cols-[1fr]', 'grid-rows-[1fr_auto_auto]', 'xl:order-1', 'xl:w-[183.2rem]', 'xl:self-start', 'absolute', 'top-[1%]', 'left-1/2', 'translate-x-[-50%]', 'scale-95', 'xl:scale-[1.4]', 'avatar', 'scale-[.75]', 'rounded-3xl', 'col-[1/2]', 'row-[1/3]', 'mx-auto', 'w-[50rem]', 'xl:scale-[1.1]', 'grid-cols-1', 'grid-col-[1/2]', 'col-[1/2]', 'row-[2/4]', 'bg-white', 'mx-auto', 'flex', 'z-[30]', 'gap-x-[3rem]', 'w-fit', 'p-[1rem]', 'rounded-full', 'xl:absolute', 'xl:left-[11%]', 'xl:p-[1.3rem]', 'scale-[.8]', 'xl:scale-[1]', 'cursor-pointer', 'scale-[.8]', 'xl:scale-[1]', 'cursor-pointer', 'p-[2rem]', 'text-center', 'mt-[2rem]', 'pt-[4.5rem]', 'relative', 'xl:w-[200rem]', 'xl:text-left', 'z-20', 'xl:absolute', 'xl:top-1/2', 'xl:translate-y-[-45%]', 'xl:left-[10%]', 'xl:w-[49.5rem]', 'absolute', 'left-1/2', 'top-0', 'scale-[.5]', 'translate-x-[-50%]', 'xl:scale-[.7]', 'xl:left-[26%]', 'font-inter300', 'text-[1.7rem]', 'relative', 'xl:text-[2.6rem]', 'xl:flex', 'xl:gap-x-[1rem]', 'xl:items-center', 'xl:mt-[2rem]', 'font-inter700', 'mt-[1.5rem]', 'text-[1.4rem]', 'xl:mt-0', 'xl:text-[1.6rem]', 'text-[1.4rem]', 'text-blue-0', 'xl:text-[1.6rem]', 'absolute', 'w-full', 'left-0', 'bottom-0', 'xl:w-[43%]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;
@@ -118,7 +124,7 @@ var __VLS_self = (await Promise.resolve().then(function () { return require('vue
             left: icon_prev_svg_1.default,
             downPattern: pattern_curve_svg_1.default,
             quotes: pattern_quotes_svg_1.default,
-            index: index,
+            indexItem: indexItem,
             data: data,
             goNext: goNext,
             goPrevious: goPrevious,
