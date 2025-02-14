@@ -7,10 +7,7 @@
 				:key="index"
 				:src="item.img"
 				:alt="item.img + ' profile picture'"
-				:class="[
-					'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]',
-					index === indexItem ? 'z-[10] block' : 'hidden',
-				]" />
+				class="'avatar scale-[.75] rounded-3xl col-[1/2] row-[1/3] mx-auto w-[50rem] xl:scale-[1.1]" v-show="index === indexItem"/>
 
 			<div
 				class="grid-cols-1 grid-col-[1/2] col-[1/2] row-[2/4] bg-white mx-auto flex z-[30] gap-x-[3rem] w-fit p-[1rem] rounded-full xl:absolute xl:left-[11%] xl:p-[1.3rem]">
