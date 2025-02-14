@@ -45,7 +45,7 @@ import downPattern from '@/images/pattern-curve.svg'
 import quotes from '@/images/pattern-quotes.svg'
 import jerry from '@/images/jerry.jpg'
 import tom from '@/images/tom.jpg'
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 let index = ref(0)
 const data = reactive({
 	0: {
@@ -93,6 +93,17 @@ const goPrevious = (): void => {
 		index.value--
 	}
 }
+
+const preloadImages = () => {
+	Object.values(data).forEach((item) => {
+		const img = new Image()
+		img.src = item.img
+	})
+}
+
+onMounted(() => {
+	preloadImages()
+})
 </script>
 
 <style lang="scss">
