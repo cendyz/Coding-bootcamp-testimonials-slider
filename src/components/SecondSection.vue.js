@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var vue_1 = require("vue");
+var pattern_quotes_svg_1 = require("@/images/pattern-quotes.svg");
 var props = defineProps({
     checkIndex: Number,
     isChecked: Boolean,
@@ -44,7 +45,7 @@ function __VLS_template() {
     var __VLS_directives;
     // CSS variable injection 
     // CSS variable injection end 
-    __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)(__assign({ class: ("text-center grid grid-rows-1 grid-columns-1 lg:col-[1/3] lg:row-span-full lg:z-[100] lg:mr-[18rem] lg:max-w-[43rem] lg:text-left lg:mt-[8rem]") }));
+    __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)(__assign({ class: ("relative text-center grid grid-rows-1 grid-columns-1 lg:col-[1/3] lg:row-span-full lg:z-[100] lg:mr-[18rem] lg:max-w-[43rem] lg:text-left lg:mt-[8rem]") }));
     for (var _i = 0, _a = __VLS_getVForSourceType((__VLS_ctx.data)); _i < _a.length; _i++) {
         var _b = _a[_i], item = _b[0], index = _b[1];
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign(__assign({ key: ((index)) }, { class: ("col-span-full row-span-full transition-opacity duration-200") }), { class: ((index === props.checkIndex ? 'z-[10] opacity-1' : 'z-0 opacity-0')) }));
@@ -53,10 +54,11 @@ function __VLS_template() {
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("mt-[2rem]") }));
         __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("font-bold text-bgDARK dark:text-bg") }));
         (item.job);
-        __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("text-blue-200 dark:text-blue-100dark") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("text-[#4242CA] dark:text-blue-100dark") }));
         (item.name);
     }
-    ['text-center', 'grid', 'grid-rows-1', 'grid-columns-1', 'lg:col-[1/3]', 'lg:row-span-full', 'lg:z-[100]', 'lg:mr-[18rem]', 'lg:max-w-[43rem]', 'lg:text-left', 'lg:mt-[8rem]', 'col-span-full', 'row-span-full', 'transition-opacity', 'duration-200', 'text-[1.89rem]', 'text-bgDARK', 'dark:text-[#8E8EB7]', 'font-inter300', 'lg:text-[2.3rem]', 'mt-[2rem]', 'font-bold', 'text-bgDARK', 'dark:text-bg', 'text-blue-200', 'dark:text-blue-100dark',];
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.quotes)), alt: (""), 'aria-hidden': ("true") }, { class: ("absolute top-[-12%] left-1/2 translate-x-[-50%] w-[7rem] lg:w-[10rem] lg:left-[28%] lg:top-[-22%]") }));
+    ['relative', 'text-center', 'grid', 'grid-rows-1', 'grid-columns-1', 'lg:col-[1/3]', 'lg:row-span-full', 'lg:z-[100]', 'lg:mr-[18rem]', 'lg:max-w-[43rem]', 'lg:text-left', 'lg:mt-[8rem]', 'col-span-full', 'row-span-full', 'transition-opacity', 'duration-200', 'text-[1.89rem]', 'text-bgDARK', 'dark:text-[#8E8EB7]', 'font-inter300', 'lg:text-[2.3rem]', 'mt-[2rem]', 'font-bold', 'text-bgDARK', 'dark:text-bg', 'text-[#4242CA]', 'dark:text-blue-100dark', 'absolute', 'top-[-12%]', 'left-1/2', 'translate-x-[-50%]', 'w-[7rem]', 'lg:w-[10rem]', 'lg:left-[28%]', 'lg:top-[-22%]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;
@@ -75,6 +77,7 @@ function __VLS_template() {
 var __VLS_self = (await Promise.resolve().then(function () { return require('vue'); })).defineComponent({
     setup: function () {
         return {
+            quotes: pattern_quotes_svg_1.default,
             data: data,
         };
     },

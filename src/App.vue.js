@@ -65,7 +65,7 @@ function __VLS_template() {
     var __VLS_2;
     var __VLS_3;
     var __VLS_4;
-    __VLS_elementAsFunction(__VLS_intrinsicElements.main, __VLS_intrinsicElements.main)(__assign({ class: ("gap-y-[5rem] p-[2rem] py-[5.7rem] pb-[12rem] container lg:grid lg:place-items-center lg:grid-cols-[1fr_auto_auto] lg:grid-rows-1") }));
+    __VLS_elementAsFunction(__VLS_intrinsicElements.main, __VLS_intrinsicElements.main)(__assign({ class: ("grid gap-y-[8rem] p-[2rem] py-[5.7rem] pb-[12rem] container lg:place-items-center lg:grid-cols-[1fr_auto_auto] lg:grid-rows-1") }));
     // @ts-ignore
     /** @type { [typeof FirstSection, ] } */ ;
     // @ts-ignore
@@ -96,8 +96,8 @@ function __VLS_template() {
             checkIndex: ((__VLS_ctx.checkIndex)),
             isChecked: ((__VLS_ctx.isChecked)),
         }], __VLS_functionalComponentArgsRest(__VLS_14), false));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.pattern)), alt: (""), 'aria-hidden': ("true") }, { class: ("absolute bottom-0 left-0") }));
-    ['gap-y-[5rem]', 'p-[2rem]', 'py-[5.7rem]', 'pb-[12rem]', 'container', 'lg:grid', 'lg:place-items-center', 'lg:grid-cols-[1fr_auto_auto]', 'lg:grid-rows-1', 'absolute', 'bottom-0', 'left-0',];
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.pattern)), alt: (""), 'aria-hidden': ("true") }, { class: ("absolute bottom-0 left-0 lg:w-[40%]") }));
+    ['grid', 'gap-y-[8rem]', 'p-[2rem]', 'py-[5.7rem]', 'pb-[12rem]', 'container', 'lg:place-items-center', 'lg:grid-cols-[1fr_auto_auto]', 'lg:grid-rows-1', 'absolute', 'bottom-0', 'left-0', 'lg:w-[40%]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;

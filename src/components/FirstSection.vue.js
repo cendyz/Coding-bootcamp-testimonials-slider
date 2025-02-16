@@ -62,18 +62,20 @@ function __VLS_template() {
     var __VLS_ctx = {};
     var __VLS_components;
     var __VLS_directives;
+    // CSS variable injection 
+    // CSS variable injection end 
     __VLS_elementAsFunction(__VLS_intrinsicElements.section, __VLS_intrinsicElements.section)(__assign({ class: ("grid grid-rows-[1fr_auto_auto] grid-columns-1 lg:order-1 lg:col-[2/4] lg:row-span-full lg:relative") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.pattern)), alt: (""), 'aria-hidden': ("true") }, { class: ("absolute left-1/2 translate-x-[-50%] top-[3rem] w-[32rem] lg:scale-[1.8] lg:top-[6.5rem]") }));
     for (var _i = 0, _a = __VLS_getVForSourceType((__VLS_ctx.data)); _i < _a.length; _i++) {
         var _b = _a[_i], item = _b[0], index = _b[1];
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ src: ((item.img)), alt: (""), key: ((index)) }, { class: ("col-span-full row-[1/3] block mx-auto w-[25rem] rounded-lg lg:w-[44rem]") }), { class: ((__VLS_ctx.checkIndex === index ? 'z-[50] opacity-1' : 'z-0 opacity-0')) }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ src: ((item.img)), alt: (""), key: ((index)) }, { class: ("av1 col-span-full row-[1/3] block mx-auto w-[25rem] rounded-lg lg:w-[44rem]") }), { class: ((__VLS_ctx.checkIndex === index ? 'z-[50] opacity-1' : 'z-0 opacity-0')) }));
     }
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("row-[2/4] col-[1/2] mx-auto bg-bg dark:bg-bgDARK border-[2px] border-white relative z-[100] flex items-center gap-x-[1.2rem] rounded-full lg:left-[-29%]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ onClick: (__VLS_ctx.goPrevious) }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.left)), alt: ("previous") }, { class: ("p-[1.1rem] w-[3.5rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ onClick: (__VLS_ctx.goNext) }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.right)), alt: ("next") }, { class: ("p-[1.1rem] w-[3.5rem]") }));
-    ['grid', 'grid-rows-[1fr_auto_auto]', 'grid-columns-1', 'lg:order-1', 'lg:col-[2/4]', 'lg:row-span-full', 'lg:relative', 'absolute', 'left-1/2', 'translate-x-[-50%]', 'top-[3rem]', 'w-[32rem]', 'lg:scale-[1.8]', 'lg:top-[6.5rem]', 'col-span-full', 'row-[1/3]', 'block', 'mx-auto', 'w-[25rem]', 'rounded-lg', 'lg:w-[44rem]', 'row-[2/4]', 'col-[1/2]', 'mx-auto', 'bg-bg', 'dark:bg-bgDARK', 'border-[2px]', 'border-white', 'relative', 'z-[100]', 'flex', 'items-center', 'gap-x-[1.2rem]', 'rounded-full', 'lg:left-[-29%]', 'p-[1.1rem]', 'w-[3.5rem]', 'p-[1.1rem]', 'w-[3.5rem]',];
+    ['grid', 'grid-rows-[1fr_auto_auto]', 'grid-columns-1', 'lg:order-1', 'lg:col-[2/4]', 'lg:row-span-full', 'lg:relative', 'absolute', 'left-1/2', 'translate-x-[-50%]', 'top-[3rem]', 'w-[32rem]', 'lg:scale-[1.8]', 'lg:top-[6.5rem]', 'av1', 'col-span-full', 'row-[1/3]', 'block', 'mx-auto', 'w-[25rem]', 'rounded-lg', 'lg:w-[44rem]', 'row-[2/4]', 'col-[1/2]', 'mx-auto', 'bg-bg', 'dark:bg-bgDARK', 'border-[2px]', 'border-white', 'relative', 'z-[100]', 'flex', 'items-center', 'gap-x-[1.2rem]', 'rounded-full', 'lg:left-[-29%]', 'p-[1.1rem]', 'w-[3.5rem]', 'p-[1.1rem]', 'w-[3.5rem]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;

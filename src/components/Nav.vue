@@ -1,8 +1,8 @@
 <template>
-	<nav class="absolute right-[5%] top-[2%] z-10 lg:right-[3%] lg:top-[3%]">
-		<label class="swap swap-rotate">
+	<nav class="absolute right-[5%] top-[3%] z-10 lg:right-[3%]">
+		<label class="swap swap-rotate" for="themer">
 			<!-- this hidden checkbox controls the state -->
-			<input type="checkbox" :checked="props.isChecked" @click="updateTheme" />
+			<input type="checkbox" :checked="props.isChecked" @click="updateTheme" id="themer" />
 
 			<!-- sun icon -->
 			<svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

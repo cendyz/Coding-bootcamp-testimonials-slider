@@ -1,11 +1,11 @@
 <template>
 	<Nav :isChecked="isChecked" @changeThemeValue="isChecked = $event" />
 	<main
-		class="gap-y-[5rem] p-[2rem] py-[5.7rem] pb-[12rem] container lg:grid lg:place-items-center lg:grid-cols-[1fr_auto_auto] lg:grid-rows-1">
+		class="grid gap-y-[8rem] p-[2rem] py-[5.7rem] pb-[12rem] container lg:place-items-center lg:grid-cols-[1fr_auto_auto] lg:grid-rows-1">
 		<FirstSection @passCheckIndex="checkIndex = $event" />
 		<SecondSection :checkIndex="checkIndex" :isChecked="isChecked" />
 	</main>
-	<img :src="pattern" alt="" aria-hidden="true" class="absolute bottom-0 left-0" />
+	<img :src="pattern" alt="" aria-hidden="true" class="absolute bottom-0 left-0 lg:w-[40%]" />
 </template>
 
 <script setup lang="ts">
