@@ -3,8 +3,8 @@
 	<main class="card gap-y-[5rem] p-[2rem] py-[5.7rem] pb-[12rem] container">
 		<FirstSection @passCheckIndex="checkIndex = $event" />
 		<SecondSection :checkIndex="checkIndex" />
-		<img :src="pattern" alt="" aria-hidden="true" class="absolute bottom-0 left-0" />
 	</main>
+	<img :src="pattern" alt="" aria-hidden="true" class="absolute bottom-0 left-0" />
 </template>
 
 <script setup lang="ts">

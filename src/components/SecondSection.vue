@@ -1,21 +1,27 @@
 <template>
-	<section class="text-center">
-		<p class="text-[1.89rem]">{{ data[props.checkIndex].desc }}</p>
-		<div class="mt-[2rem]">
-			<p class="font-bold text-bgDARK dark:text-bg">{{ data[props.checkIndex].job }}</p>
-			<p class="text-blue-2props.checkIndex0 dark:text-blue-100dark">{{ data[props.checkIndex].name }}</p>
+	<section class="text-center grid grid-rows-1 grid-columns-1">
+		<div
+			v-for="(item, index) in data"
+			:key="index"
+			class="col-span-full row-span-full transition-opacity duration-500"
+			:class="index === props.checkIndex ? 'z-[10] opacity-1' : 'z-0 opacity-0'">
+			<p class="text-[1.89rem] dark:text-bg">{{ item.desc }}</p>
+			<div class="mt-[2rem]">
+				<p class="font-bold text-bgDARK dark:text-bg">{{ item.job }}</p>
+				<p class="text-blue-200 dark:text-blue-100dark">{{ item.name }}</p>
+			</div>
 		</div>
 	</section>
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps({
 	checkIndex: Number,
 })
 
-const data = reactive([
+const data = ref([
 	{
 		name: 'Tanya Sinclair',
 		job: 'UX Engineer',
