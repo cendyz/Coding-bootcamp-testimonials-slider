@@ -1,5 +1,5 @@
 <template>
-	<nav class="absolute right-[5%] top-[2%] z-10">
+	<nav class="absolute right-[5%] top-[2%] z-10 lg:right-[3%] lg:top-[3%]">
 		<label class="swap swap-rotate">
 			<!-- this hidden checkbox controls the state -->
 			<input type="checkbox" :checked="props.isChecked" @click="updateTheme" />

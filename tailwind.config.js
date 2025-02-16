@@ -24,6 +24,7 @@ export default {
 				},
 				bg: '#fbfbfe',
 				bgDARK: '#010104',
+				textDARK: 'rgb(181, 181, 181)',
 			},
 		},
 	},

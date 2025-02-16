@@ -1,11 +1,14 @@
 <template>
-	<section class="text-center grid grid-rows-1 grid-columns-1">
+	<section
+		class="text-center grid grid-rows-1 grid-columns-1 lg:col-[1/3] lg:row-span-full lg:z-[100] lg:mr-[18rem] lg:max-w-[43rem] lg:text-left lg:mt-[8rem]">
 		<div
 			v-for="(item, index) in data"
 			:key="index"
-			class="col-span-full row-span-full transition-opacity duration-500"
+			class="col-span-full row-span-full transition-opacity duration-200"
 			:class="index === props.checkIndex ? 'z-[10] opacity-1' : 'z-0 opacity-0'">
-			<p class="text-[1.89rem] dark:text-bg">{{ item.desc }}</p>
+			<p class="text-[1.89rem] text-bgDARK dark:text-[#8E8EB7] font-inter300 lg:text-[2.3rem]">
+				{{ item.desc }}
+			</p>
 			<div class="mt-[2rem]">
 				<p class="font-bold text-bgDARK dark:text-bg">{{ item.job }}</p>
 				<p class="text-blue-200 dark:text-blue-100dark">{{ item.name }}</p>
@@ -19,6 +22,7 @@ import { ref } from 'vue'
 
 const props = defineProps({
 	checkIndex: Number,
+	isChecked: Boolean,
 })
 
 const data = ref([
@@ -44,3 +48,9 @@ const data = ref([
 	},
 ])
 </script>
+
+<style lang="scss">
+.textShadow {
+	text-shadow: 3px 3px 7px rgb(0, 0, 0);
+}
+</style>

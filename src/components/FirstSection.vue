@@ -1,16 +1,20 @@
 <template>
-	<section class="grid grid-rows-[1fr_auto_auto] grid-columns-1">
-		<img :src="pattern" alt="" aria-hidden="true" class="absolute left-1/2 translate-x-[-50%] top-[3rem] w-[32rem]" />
+	<section class="grid grid-rows-[1fr_auto_auto] grid-columns-1 lg:order-1 lg:col-[2/4] lg:row-span-full lg:relative">
+		<img
+			:src="pattern"
+			alt=""
+			aria-hidden="true"
+			class="absolute left-1/2 translate-x-[-50%] top-[3rem] w-[32rem] lg:scale-[1.8] lg:top-[6.5rem]" />
 
 		<img
 			v-for="(item, index) in data"
 			:src="item.img"
 			alt=""
 			:key="index"
-			class="col-span-full row-[1/3] block mx-auto w-[25rem] rounded-lg transition-opacity duration-500 ease-in-out"
+			class="col-span-full row-[1/3] block mx-auto w-[25rem] rounded-lg lg:w-[44rem]"
 			:class="checkIndex === index ? 'z-[50] opacity-1' : 'z-0 opacity-0'" />
 		<div
-			class="row-[2/4] col-[1/2] mx-auto bg-bg dark:bg-bgDARK border-[2px] border-white relative z-[100] flex items-center gap-x-[1.2rem] rounded-full">
+			class="row-[2/4] col-[1/2] mx-auto bg-bg dark:bg-bgDARK border-[2px] border-white relative z-[100] flex items-center gap-x-[1.2rem] rounded-full lg:left-[-29%]">
 			<button @click="goPrevious">
 				<img :src="left" alt="previous" class="p-[1.1rem] w-[3.5rem]" />
 			</button>

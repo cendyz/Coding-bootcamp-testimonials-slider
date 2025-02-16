@@ -1,8 +1,9 @@
 <template>
 	<Nav :isChecked="isChecked" @changeThemeValue="isChecked = $event" />
-	<main class="card gap-y-[5rem] p-[2rem] py-[5.7rem] pb-[12rem] container">
+	<main
+		class="gap-y-[5rem] p-[2rem] py-[5.7rem] pb-[12rem] container lg:grid lg:place-items-center lg:grid-cols-[1fr_auto_auto] lg:grid-rows-1">
 		<FirstSection @passCheckIndex="checkIndex = $event" />
-		<SecondSection :checkIndex="checkIndex" />
+		<SecondSection :checkIndex="checkIndex" :isChecked="isChecked" />
 	</main>
 	<img :src="pattern" alt="" aria-hidden="true" class="absolute bottom-0 left-0" />
 </template>
