@@ -12,19 +12,20 @@ export default {
 				inter500: '500',
 				inter700: '700',
 			},
-			fontSize: {
-				base: ['1.6rem'],
-			},
 			container: {
 				center: true,
 			},
 			colors: {
 				blue: {
-					0: 'hsl(240, 18%, 77%)',
-					100: 'hsl(240, 38%, 20%)',
+					100: '#202046',
+					200: '#babacf',
+					'100dark': '#b9b9df',
+					'200dark': '#303045',
 				},
+				bg: '#fbfbfe',
+				bgDARK: '#010104',
 			},
 		},
 	},
-	plugins: [require('daisyui'),],
+	plugins: [require('daisyui')],
 }
